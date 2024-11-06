@@ -28,4 +28,4 @@ spec:
   - port: 8089           # The port that will be exposed externally
     targetPort: 8081      # The port the container is listening on
   selector:
-    app: bankapp  # This ensures the service connects to the app pods
+    app: medicure  # This ensures the service connects to the app pods
