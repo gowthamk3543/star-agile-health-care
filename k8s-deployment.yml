@@ -25,7 +25,7 @@ metadata:
 spec:
   type: LoadBalancer  # This tells Kubernetes to expose the service via a load balancer
   ports:
-  - port: 8090           # The port that will be exposed externally
+  - port: 8091           # The port that will be exposed externally
     targetPort: 8082      # The port the container is listening on
   selector:
     app: medicure  # This ensures the service connects to the app pods
