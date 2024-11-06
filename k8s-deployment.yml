@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bankapp
+  name: medicure
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bankapp
+      app: medicure
   template:
     metadata:
       labels:
-        app: bankapp
+        app: medicure
     spec:
       containers:
-      - name: bankapp
-        image: gowthamk3543/bankapp1:latest
+      - name: medicure
+        image: gowthamk3543/medicure:latest
         ports:
         - containerPort: 8081
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: bankapp-service
+  name: medicure-service
 spec:
   type: LoadBalancer  # This tells Kubernetes to expose the service via a load balancer
   ports:
-  - port: 8088           # The port that will be exposed externally
+  - port: 8089           # The port that will be exposed externally
     targetPort: 8081      # The port the container is listening on
   selector:
     app: bankapp  # This ensures the service connects to the app pods
