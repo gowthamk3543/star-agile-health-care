@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: bankapp
-        image: gowthamk3543/medicure:latest
+        image: gowthamk3543/bankapp1:latest
         ports:
         - containerPort: 8081
 ---
@@ -23,9 +23,9 @@ kind: Service
 metadata:
   name: bankapp-service
 spec:
-  type: LoadBalancer
+  type: LoadBalancer  # This tells Kubernetes to expose the service via a load balancer
   ports:
-  - port: 8087
-    targetPort: 8081
+  - port: 8088           # The port that will be exposed externally
+    targetPort: 8081      # The port the container is listening on
   selector:
-    app: bankapp
+    app: bankapp  # This ensures the service connects to the app pods
