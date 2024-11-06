@@ -7,4 +7,4 @@
     command : sudo apt-get update
     
   - name: Deploy Docker Container
-    command: docker run -itd -p 8090:8081 gowthamk3543/medicure:latest
+    command: docker run -itd -p 8090:8082 gowthamk3543/medicure:latest
